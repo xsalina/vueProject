@@ -87,7 +87,7 @@
       var wb = XLSX.utils.table_to_book(document.querySelector("#out-table"));
       /* 获取二进制字符串作为输出 */
       var wbout = XLSX.write(wb, {
-        bookType: "xlsx",
+        bookType: "xls",
         bookSST: true,
         type: "array"
       });
@@ -99,7 +99,7 @@
           //返回一个新创建的 Blob 对象，其内容由参数中给定的数组串联组成。
           new Blob([wbout], { type: "application/octet-stream" }),
           //设置导出文件名称
-          "sheetjs.xlsx"
+          "sheetjs.xls"
         );
       } catch (e) {
         if (typeof console !== "undefined") console.log(e, wbout);
